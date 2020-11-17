@@ -19,20 +19,18 @@
       "runner": "@nrwl/nx-cloud",
       "options": {
         "accessToken": "YjJmNmI0YzUtYjdkNS00ZjAwLWE1OTMtMDNkMDcwZWNlYjYxfHJlYWQtd3JpdGU=",
-        "cacheableOperations": ["build", "test", "lint", "e2e"],
+        "cacheableOperations": [
+          "build",
+          "test",
+          "lint",
+          "e2e"
+        ],
         "canTrackAnalytics": true,
         "showUsageWarnings": true
       }
     }
   },
   "projects": {
-    "sb": {
-      "tags": []
-    },
-    "sb-e2e": {
-      "tags": [],
-      "implicitDependencies": ["sb"]
-    },
     "lgt-date": {
       "tags": []
     },
@@ -41,7 +39,18 @@
     },
     "smartbanking-showcase-e2e": {
       "tags": [],
-      "implicitDependencies": ["smartbanking-showcase"]
+      "implicitDependencies": [
+        "smartbanking-showcase"
+      ]
+    },
+    "smartbanking-sb": {
+      "tags": []
+    },
+    "smartbanking-sb-e2e": {
+      "tags": [],
+      "implicitDependencies": [
+        "smartbanking-sb"
+      ]
     }
   }
 }

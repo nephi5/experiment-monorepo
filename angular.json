@@ -1,125 +1,6 @@
 {
   "version": 1,
   "projects": {
-    "sb": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
-      "root": "apps/sb",
-      "sourceRoot": "apps/sb/src",
-      "prefix": "experiment-monorepo",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/apps/sb",
-            "index": "apps/sb/src/index.html",
-            "main": "apps/sb/src/main.ts",
-            "polyfills": "apps/sb/src/polyfills.ts",
-            "tsConfig": "apps/sb/tsconfig.app.json",
-            "aot": true,
-            "assets": ["apps/sb/src/favicon.ico", "apps/sb/src/assets"],
-            "styles": ["apps/sb/src/styles.scss"],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/sb/src/environments/environment.ts",
-                  "with": "apps/sb/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "sb:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "sb:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "sb:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/sb/tsconfig.app.json",
-              "apps/sb/tsconfig.spec.json",
-              "apps/sb/tsconfig.editor.json"
-            ],
-            "exclude": ["**/node_modules/**", "!apps/sb/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/sb/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "sb-e2e": {
-      "root": "apps/sb-e2e",
-      "sourceRoot": "apps/sb-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/sb-e2e/cypress.json",
-            "tsConfig": "apps/sb-e2e/tsconfig.e2e.json",
-            "devServerTarget": "sb:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "sb:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["apps/sb-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/sb-e2e/**/*"]
-          }
-        }
-      }
-    },
     "lgt-date": {
       "projectType": "library",
       "root": "libs/lgt-date",
@@ -133,7 +14,10 @@
               "libs/lgt-date/tsconfig.lib.json",
               "libs/lgt-date/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/lgt-date/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/lgt-date/**/*"
+            ]
           }
         },
         "test": {
@@ -174,7 +58,9 @@
               "apps/smartbanking/showcase/src/favicon.ico",
               "apps/smartbanking/showcase/src/assets"
             ],
-            "styles": ["apps/smartbanking/showcase/src/styles.scss"],
+            "styles": [
+              "apps/smartbanking/showcase/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -269,10 +155,144 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/smartbanking/showcase-e2e/tsconfig.e2e.json"],
+            "tsConfig": [
+              "apps/smartbanking/showcase-e2e/tsconfig.e2e.json"
+            ],
             "exclude": [
               "**/node_modules/**",
               "!apps/smartbanking/showcase-e2e/**/*"
+            ]
+          }
+        }
+      }
+    },
+    "smartbanking-sb": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/smartbanking/sb",
+      "sourceRoot": "apps/smartbanking/sb/src",
+      "prefix": "experiment-monorepo",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/smartbanking/sb",
+            "index": "apps/smartbanking/sb/src/index.html",
+            "main": "apps/smartbanking/sb/src/main.ts",
+            "polyfills": "apps/smartbanking/sb/src/polyfills.ts",
+            "tsConfig": "apps/smartbanking/sb/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/smartbanking/sb/src/favicon.ico",
+              "apps/smartbanking/sb/src/assets"
+            ],
+            "styles": [
+              "apps/smartbanking/sb/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/smartbanking/sb/src/environments/environment.ts",
+                  "with": "apps/smartbanking/sb/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "smartbanking-sb:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "smartbanking-sb:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "smartbanking-sb:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/smartbanking/sb/tsconfig.app.json",
+              "apps/smartbanking/sb/tsconfig.spec.json",
+              "apps/smartbanking/sb/tsconfig.editor.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/smartbanking/sb/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/smartbanking/sb/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "smartbanking-sb-e2e": {
+      "root": "apps/smartbanking/sb-e2e",
+      "sourceRoot": "apps/smartbanking/sb-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/smartbanking/sb-e2e/cypress.json",
+            "tsConfig": "apps/smartbanking/sb-e2e/tsconfig.e2e.json",
+            "devServerTarget": "smartbanking-sb:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "smartbanking-sb:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/smartbanking/sb-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/smartbanking/sb-e2e/**/*"
             ]
           }
         }
@@ -326,5 +346,5 @@
       "unitTestRunner": "jest"
     }
   },
-  "defaultProject": "sb"
+  "defaultProject": "smartbanking-sb"
 }

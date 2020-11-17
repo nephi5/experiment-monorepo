@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'sb',
-  preset: '../../jest.preset.js',
+  displayName: 'smartbanking-sb',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../coverage/apps/sb',
+  coverageDirectory: '../../../coverage/apps/smartbanking/sb',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',
