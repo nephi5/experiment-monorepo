@@ -100,3 +100,4 @@ Visit [Nx Cloud](https://nx.app/) to learn more.
 ## Questions
 
 - Can we define common command files between E2E tests
+- Can you run tests on watch with affected?
