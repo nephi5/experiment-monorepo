@@ -10,5 +10,5 @@ export class AppComponent {
   constructor() {
     console.log('new Date', new LgtDate().getTodaysDate());
   }
-  title = 'sb';
+  title = 'smartbanking-showcase';
 }

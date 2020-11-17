@@ -16,9 +16,12 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "accessToken": "YjJmNmI0YzUtYjdkNS00ZjAwLWE1OTMtMDNkMDcwZWNlYjYxfHJlYWQtd3JpdGU=",
+        "cacheableOperations": ["build", "test", "lint", "e2e"],
+        "canTrackAnalytics": true,
+        "showUsageWarnings": true
       }
     }
   },
@@ -29,6 +32,16 @@
     "sb-e2e": {
       "tags": [],
       "implicitDependencies": ["sb"]
+    },
+    "lgt-date": {
+      "tags": []
+    },
+    "smartbanking-showcase": {
+      "tags": []
+    },
+    "smartbanking-showcase-e2e": {
+      "tags": [],
+      "implicitDependencies": ["smartbanking-showcase"]
     }
   }
 }
